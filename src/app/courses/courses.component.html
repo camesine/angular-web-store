@@ -1,0 +1,14 @@
+<h2> {{ title }} </h2>
+<hr>
+<div class="row">
+
+  <div *ngFor="let course of Courses" class="col-md-3">
+    <div class="thumbnail course ">
+      <img [src]="course.image" />
+      <h2>{{course.name}}</h2>
+      <p class="lead">Precio: {{course.price | currency: 'USD': true: '1.2-2'}}</p>
+      <button class="btn btn-success">AGREGAR AL CARRITO</button>
+    </div>
+  </div>
+
+</div>
