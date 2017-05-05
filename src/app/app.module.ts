@@ -6,19 +6,22 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseboxComponent } from './coursebox/coursebox.component';
+import { CartComponent } from './cart/cart.component';
+import { CartService } from './services/cart.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
-    CourseboxComponent
+    CourseboxComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

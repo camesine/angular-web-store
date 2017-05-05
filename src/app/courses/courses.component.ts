@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from '../common/course';
+import { CartService } from '../services/cart.service';
+
 const COURSES: Course[] = [
   {
     id: 1,
@@ -9,7 +11,7 @@ const COURSES: Course[] = [
   },
   {
     id: 2,
-    name: 'REACT',
+    name: 'React',
     image: 'http://vincent.billey.me/talks/react-putting-js-in-your-face/assets/react-logo.png',
     price: 29
   },
@@ -18,7 +20,8 @@ const COURSES: Course[] = [
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.css']
+  styleUrls: ['./courses.component.css'],
+  providers: [CartService]
 })
 export class CoursesComponent implements OnInit {
 
@@ -26,7 +29,7 @@ export class CoursesComponent implements OnInit {
 
   Courses = COURSES;
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
   }

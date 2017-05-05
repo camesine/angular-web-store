@@ -3,6 +3,6 @@
       <img [src]="course.image" />
       <h2>{{course.name}}</h2>
       <p class="lead">Precio: {{course.price | currency: 'USD': true: '1.2-2'}}</p>
-      <button class="btn btn-success">AGREGAR AL CARRITO</button>
+      <button (click)="add(course)" class="btn btn-success">AGREGAR AL CARRITO</button>
     </div>
   </div>

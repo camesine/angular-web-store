@@ -1,19 +1,22 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Course } from '../common/course';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-coursebox',
   templateUrl: './coursebox.component.html',
-  styleUrls: ['./coursebox.component.css']
+  styleUrls: ['./coursebox.component.css'],
+  providers: [CartService]
 })
-export class CourseboxComponent implements OnInit {
+export class CourseboxComponent {
 
   @Input()
   course: Course;
 
-  constructor() { }
+  constructor(private CartService: CartService) { }
 
-  ngOnInit() {
+  add(course: Course) {
+    this.CartService.addToCart(course);
   }
 
 }
