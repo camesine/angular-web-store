@@ -23,7 +23,7 @@ export class CoursesComponent implements OnInit {
   }
 
   async getCourses() {
-    this.Courses = await this.ApiService.getCourses();
+    this.Courses = await this.ApiService.getCoursesSlow();
   }
 
 }
