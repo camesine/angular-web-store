@@ -1,42 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from '../common/course';
 import { CartService } from '../services/cart.service';
+import { ApiService } from '../services/api.service';
 
-const COURSES: Course[] = [
-  {
-    id: 1,
-    name: 'Angular 2',
-    image: 'https://angular.io/resources/images/logos/angular/angular.svg',
-    price: 59
-  },
-  {
-    id: 2,
-    name: 'React',
-    image: 'http://vincent.billey.me/talks/react-putting-js-in-your-face/assets/react-logo.png',
-    price: 29
-  },
-  {
-    id: 3,
-    name: 'Vue.js',
-    image: 'http://victorroblesweb.es/wp-content/uploads/2017/03/vuejs2-victorroblesweb.jpg',
-    price: 90
-  },
-];
 
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.css'],
+  providers: [ApiService]
 })
 export class CoursesComponent implements OnInit {
 
   title = 'CURSOS DISPONIBLES';
 
-  Courses = COURSES;
+  Courses: Course [];
 
-  constructor() { }
+  constructor(private ApiService: ApiService) { }
 
   ngOnInit() {
+    this.getCourses();
+  }
+
+  async getCourses() {
+    this.Courses = await this.ApiService.getCourses();
   }
 
 }
