@@ -6,7 +6,6 @@ import { CartService } from '../services/cart.service';
   selector: 'app-coursebox',
   templateUrl: './coursebox.component.html',
   styleUrls: ['./coursebox.component.css'],
-  providers: [CartService]
 })
 export class CourseboxComponent {
 

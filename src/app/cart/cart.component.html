@@ -1,5 +1,26 @@
-<p>
- {{details}}
- {{ courses | json}}
-</p>
-
+<div class="panel panel-success">
+  <div class="panel-heading">CARRITO</div>
+  <div class="panel-body">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <span class="badge">{{details.items}}</span>
+                <strong>TOTAL DE ARTICULOS</strong>
+        </li>
+    </ul>
+    <div class="list-group">
+        <a href="#" *ngFor="let key of keys()" class="list-group-item">
+            <h4 class="list-group-item-heading">{{courses[key].name}}</h4>
+            <p class="list-group-item-text">{{courses[key].price | currency:'USD':true:'1.2-2'}}
+                X {{courses[key].quantity}}
+            </p>
+            <p class="text-right">Sub-total: {{ courses[key].quantity * courses[key].price | currency:'USD':true:'1.2-2'}}</p>
+        </a>
+    </div>
+            <ul class="list-group">
+        <li class="list-group-item text-bold">
+            <span class="badge">{{details.total | currency:'USD':true:'1.2-2'}}</span>
+                <strong>PRECIO TOTAL</strong> 
+        </li>
+        </ul>
+    </div>
+</div>
