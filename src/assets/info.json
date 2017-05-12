@@ -2,18 +2,21 @@
     "id": 1,
     "name": "Angular 2",
     "image": "https://angular.io/resources/images/logos/angular/angular.svg",
-    "price": 59
+    "price": 59,
+    "description": "Curso de Angular 2 para principiantes"
   },
   {
     "id": 2,
     "name": "React",
     "image": "http://vincent.billey.me/talks/react-putting-js-in-your-face/assets/react-logo.png",
-    "price": 29
+    "price": 29,
+    "description": "Curso de React + Redux avanzado"
   },
   {
     "id": 3,
     "name": "Vue.js",
     "image": "http://victorroblesweb.es/wp-content/uploads/2017/03/vuejs2-victorroblesweb.jpg",
-    "price": 90
+    "price": 90,
+    "description": "Curso de desarollo front-end con Vue.js"
   }]
   

@@ -1,3 +1,10 @@
-<p *ngIf="Course" >
-  {{Course | json }}
-</p>
+
+  <div class="row" *ngIf="Course">
+    <div class="col-md-12 text-center">
+      <img [src]="Course.image" />
+        <h3>{{Course.name}}</h3>
+        <h3>{{Course.description}}</h3>
+        <h3>{{Course.price | currency:'USD':true:'1.2-2'}}</h3>
+    </div>
+
+  </div>
