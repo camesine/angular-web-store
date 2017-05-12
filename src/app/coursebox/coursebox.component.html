@@ -1,5 +1,5 @@
  <div class="col-md-3">
-    <div class="thumbnail course ">
+    <div class="thumbnail course" [@courseState]="course.state" >
       <img [src]="course.image" (click)="goToDetails(course)" />
       <h2>{{course.name}}</h2>
       <p class="lead">Precio: {{course.price | currency: 'USD': true: '1.2-2'}}</p>

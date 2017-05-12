@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, trigger, state, style, transition, animate } from '@angular/core';
 import { Course } from '../common/course';
 import { CartService } from '../services/cart.service';
 import { Router } from '@angular/router';
@@ -7,6 +7,17 @@ import { Router } from '@angular/router';
   selector: 'app-coursebox',
   templateUrl: './coursebox.component.html',
   styleUrls: ['./coursebox.component.css'],
+  animations: [
+    trigger('courseState', [
+      state('inactive', style({
+        transform: 'scale(1)'
+      })),
+      state('active', style({
+        backgroudColor: 'black',
+        transform: 'scale(0.98)'
+      }))
+    ])
+  ]
 })
 export class CourseboxComponent {
 
@@ -21,6 +32,10 @@ export class CourseboxComponent {
   }
 
   add(course: Course) {
+    course.state = 'active';
+    setTimeout(() => {
+      course.state = 'inactive';
+    }, 100);
     this.CartService.addToCart(course);
   }
 
