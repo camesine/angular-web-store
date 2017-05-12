@@ -11,6 +11,7 @@ import { CartComponent } from './cart/cart.component';
 import { CartService } from './services/cart.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DetailsComponent } from './details/details.component';
+import { LoginComponent } from './login/login.component';
 
 const routes = [
   {
@@ -24,6 +25,10 @@ const routes = [
   {
     path: 'course/:id',
     component: DetailsComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 
@@ -34,7 +39,8 @@ const routes = [
     CourseboxComponent,
     CartComponent,
     WelcomeComponent,
-    DetailsComponent
+    DetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
