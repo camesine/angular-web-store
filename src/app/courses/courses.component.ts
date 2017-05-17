@@ -3,6 +3,7 @@ import { Course } from '../common/course';
 import { CartService } from '../services/cart.service';
 import { ApiService } from '../services/api.service';
 import { AuthService } from '../services/auth.service';
+import { FilterPipe } from '../filter.pipe';
 
 @Component({
   selector: 'app-courses',
@@ -13,6 +14,7 @@ import { AuthService } from '../services/auth.service';
 export class CoursesComponent implements OnInit {
 
   title = 'CURSOS DISPONIBLES';
+  nombre: string;
 
   Courses: Course [];
 

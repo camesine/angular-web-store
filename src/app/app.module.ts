@@ -13,6 +13,7 @@ import { CartService } from './services/cart.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DetailsComponent } from './details/details.component';
 import { LoginComponent } from './login/login.component';
+import { FilterPipe } from './filter.pipe';
 
 const routes = [
   {
@@ -41,7 +42,8 @@ const routes = [
     CartComponent,
     WelcomeComponent,
     DetailsComponent,
-    LoginComponent
+    LoginComponent,
+    FilterPipe
   ],
   imports: [
     BrowserAnimationsModule,
